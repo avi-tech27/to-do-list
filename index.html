@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="container todolist">
+        <h1 class="text-center mb-4">Want To Do</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <form id="todo-form">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="todo-task" placeholder="Task Title"
+                                    required>
+                                <input type="text" class="form-control" id="todo-description"
+                                    placeholder="Task Description" required>
+                                <button class="btn btn-primary" type="submit">
+                                    Add
+                                </button>
+                            </div>
+                            <label style="align-self: center;">Task Priority:</label>
+                            <select id="todo-priority" class="form-select" aria-label="Default select example">
+                                <option selected value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
+                            </select>
+                            <label style="align-self: center;">End Date:</label>
+                            <input type="date" class="form-control" id="todo-end-date" required>
+                        </form>
+                        <div id="todo-list-container">
+                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                                id="inlineFormCustomSelect">
+                                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off"
+                                    checked value="all">
+                                <label class="btn btn-outline-primary" for="btnradio1"
+                                    id="all-list-label">All(0)</label>
+
+                                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"
+                                    value="todo">
+                                <label class="btn btn-outline-primary" for="btnradio2"
+                                    id="to-do-list-label">To-Do(0)</label>
+
+                                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off"
+                                    value="doing">
+                                <label class="btn btn-outline-primary" for="btnradio3"
+                                    id="doing-list-label">Doing(0)</label>
+
+                                <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off"
+                                    value="done">
+                                <label class="btn btn-outline-primary" for="btnradio4"
+                                    id="done-list-label">Done(0)</label>
+                            </div>
+                            <div>
+                                <label>Sort by:</label>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                                    id="sortBySelect">
+                                    <input type="radio" class="btn-check" name="btnradioo" id="btnradioo1"
+                                        autocomplete="off" value="priority" checked>
+                                    <label class="btn btn-outline-primary" for="btnradioo1">Priority</label>
+
+                                    <input type="radio" class="btn-check" name="btnradioo" id="btnradioo2"
+                                        autocomplete="off" value="end-date">
+                                    <label class="btn btn-outline-primary" for="btnradioo2">End
+                                        Date</label>
+                                    <div class="sort-container">
+                                        <button class="btn" id="up-btn">▲</button>
+                                        <button class="btn" id="down-btn">▼</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="task-list">
+                            <div name='btnradio1' class="child-item show">
+                                <ul class="list-group" id="all-list">
+                                    <!-- Tasks will be added here dynamically -->
+                                </ul>
+                            </div>
+                            <div name='btnradio2' class="child-item">
+                                <ul class="list-group" id="todo-list">
+                                    <!-- Tasks will be added here dynamically -->
+                                </ul>
+                            </div>
+                            <div name='btnradio3' class="child-item">
+                                <ul class="list-group" id="doing-list">
+                                    <!-- Tasks will be added here dynamically -->
+                                </ul>
+                            </div>
+                            <div name='btnradio4' class="child-item">
+                                <ul class="list-group" id="done-list">
+                                    <!-- Tasks will be added here dynamically -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle (popper.js included) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
